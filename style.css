@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+    background-color: #151515;
+    color: #EEE;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+canvas{
+    position: absolute;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    margin-bottom: 30px;
+}
+.entityImg{
+    background-color: rgb(26, 255, 83);
+    display: none;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+#container{
+    border: solid white 1px;
+    margin-bottom: 50px;
+}
+.row div{
+    font-family: sans-serif;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    overflow: hidden;
+}
+.grass{
+    background-color: #242;
+}
+.water{
+    background-color: #236;
+}
+.soil{
+    background-color: rgb(49, 30, 11);
+
+}
+.stone{
+    background-color: rgb(78, 77, 77);
+}
+.wood{
+    background-color: rgb(150, 94, 59);
+}
+.sand{
+    background-color: rgb(188, 154, 68);
+}
+#hotbar{
+    position: fixed;
+    bottom: 0px;
+    background-color: #236;
+    width: 100vw;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    border-top: 2px solid #112;
+    padding: 10px;
+}
+#hotbar div{
+    font-size: 15px;
+    margin-bottom: 7px;
+    width: calc(100% / 10 - 10px);
+    height: 100%;
+    border: 1px solid #112;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+.selected{
+    border: 2px solid #112;
+    background-color: #ccc;
+    color: #222222;
+}
+@media only screen and (max-width: 800px) {
+    #hotbar {
+        height: 60px;
+        flex-wrap: wrap;
+    }
+    #container, canvas{
+        margin-bottom: 80px;
+    }
+    #hotbar div {
+        height: calc( 50% - 5px);
+        width: calc(100% / 5 - 10px);
+    }
+}
