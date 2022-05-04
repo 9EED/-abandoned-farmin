@@ -4,12 +4,18 @@
 # the plan:
 <h3> gameplay loop: </h3>
 
-![FARMIN - game-play plan](https://user-images.githubusercontent.com/88392191/166815748-ef128a78-0344-41d8-8c7b-5471d12bd2e8.jpg)
+![FARMIN - game-play plan(1)](https://user-images.githubusercontent.com/88392191/166830489-8aa845f2-c0e1-4ceb-be2d-6dae7741f573.jpg)
 
 <h3> materials: </h3>
 
-![FARMIN - materials](https://user-images.githubusercontent.com/88392191/166815759-708db5bf-6965-4b2d-baa6-a2ef3bbf8c08.jpg)
+![FARMIN - materials(1)](https://user-images.githubusercontent.com/88392191/166830522-7da49dc6-9bb3-4cd3-9820-0f9d124cf3d1.jpg)
 
 <h3> tools: </h3>
 
-![FARMIN - tools](https://user-images.githubusercontent.com/88392191/166816507-368d5737-94ef-4e34-8a72-eb69b7f04ae6.jpg)
+![FARMIN - tools(1)](https://user-images.githubusercontent.com/88392191/166830552-5a086f1a-87fc-4cbb-910d-f7959697bbf6.jpg)
+
+<h3> plants: </h3>
+
+![FARMIN - plants](https://user-images.githubusercontent.com/88392191/166830615-b4eea72a-8afb-40db-8dd4-70ca30e13394.jpg)
+
+all this is not final and will change
