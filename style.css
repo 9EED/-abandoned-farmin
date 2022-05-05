@@ -17,7 +17,7 @@ canvas{
     image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .entityImg{
     background-color: rgb(26, 255, 83);
