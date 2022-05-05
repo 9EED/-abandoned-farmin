@@ -65,71 +65,536 @@ window.addEventListener( 'mousedown', ()=>{
 window.addEventListener( 'mouseup', ()=>{
     mouse.z = false;
 });
+
+// item class constructor
+let items = {
+    empty:{},
+    null:{},
+    // tools
+    dagger: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    knife: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    sword: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    mattock: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    axe: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],        
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    pickaxe: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    hoe: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],        
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    sickle: {
+        type: 'tool',
+        places: 'null',
+        breaks: ['crop'],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    scyth: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    wateringCan: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    blucket: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    shears: {
+        type: 'tool',
+        places: 'null',
+        breaks: [],
+        damage: 5,
+        speed: 5,
+        durability: 100,
+        oneUse: false,
+    },
+    //seeds
+    potatoeSeed: {
+        type: 'seed',
+        places: 'potatoe',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    carrotSeed: {
+        type: 'seed',
+        places: 'carrot',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    onionSeed: {
+        type: 'seed',
+        places: 'onion',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    pepperSeed: {
+        type: 'seed',
+        places: 'pepper',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    tomatoSeed: {
+        type: 'seed',
+        places: 'tomato',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    cucumberSeed: {
+        type: 'seed',
+        places: 'cucumber',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    eggplantSeed: {
+        type: 'seed',
+        places: 'eggplant',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    strawberrySeed: {
+        type: 'seed',
+        places: 'strawberry',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    rasberrieSeed: {
+        type: 'seed',
+        places: 'rasberrie',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    bananaSeed: {
+        type: 'seed',
+        places: 'banana',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    appleSeed: {
+        type: 'seed',
+        places: 'apple',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    orangeSeed: {
+        type: 'seed',
+        places: 'orange',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    lemonSeed: {
+        type: 'seed',
+        places: 'lemon',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    peachSeed: {
+        type: 'seed',
+        places: 'peach',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    riceSeed: {
+        type: 'seed',
+        places: 'rice',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    // 
+    potatoe: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    carrot: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    onion: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    pepper: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    tomato: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    cucumber: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    eggplant: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    strawberry: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    rasberrie: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    banana: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    apple: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    orange: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    lemon: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    peach: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+    rice: {
+        type: 'crop',
+        places: 'null',
+        breaks: [],
+        damage: 0,
+        speed: 5,
+        durability: 100,
+        oneUse: true,
+    },
+}
+class item {
+    constructor( name, type, count){
+        this.name = name
+        this.type = type
+        this.count = count
+        this.damage = items[this.name].damage
+        this.speed = items[this.name].speed
+        this.durability = items[this.name].durability
+        this.breaks = items[this.name].breaks
+        this.oneUse = items[this.name].oneUse
+        this.use = ( x, y )=>{
+            switch (this.type) {
+                case 'tool':
+                    if ( this.breaks.indexOf( currentMap[y][x].object.breaksWith ) != -1 ) {
+                        player.pickItem( new item ( currentMap[y][x].object.breaksTo[0], currentMap[y][x].object.breaksTo[1], currentMap[y][x].object.breaksTo[2] ) )
+                        currentMap[y][x].object.place('null')
+                    }
+                    break;
+                case 'seed':
+                    currentMap[y][x].object.place( items[this.name].places )
+                    break;
+                case 'crop':
+                
+                    break;
+                case 'cell':
+
+                    break;
+                case 'consumable':
+
+                    break;
+                case 'null':
+                    break;        
+                default:
+                    error ('undefined item')
+                    break;
+            }
+        } 
+    }
+}
+
 // objects
 let objects = {
     null:{
         growth: 0,
-        growsOn: ['soil', 'water', 'grass', 'sand', 'stone', 'wood']
+        growsOn: ['soil', 'water', 'grass', 'sand', 'stone', 'wood'],
+        breaksWith: 'none',
+        breaksTo: [ 'empty', 'null', 0  ] 
+    },
+    empty:{
+        growth: 0,
+        growsOn: ['soil', 'water', 'grass', 'sand', 'stone', 'wood'],
+        breaksWith: 'none',
+        breaksTo: [ 'empty', 'null', 0  ] 
     },
     potatoe: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'potatoe', 'crop', 1 ] 
     },
     carrot: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'carrot', 'crop', 1 ] 
     },
     onion: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'onion', 'crop', 1 ] 
     },
     pepper: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'pepper', 'crop', 1 ] 
     },
     tomato: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'tomato', 'crop', 1 ] 
     },
     cucumber: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'cucumber', 'crop', 1 ] 
     },
     eggplant: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'eggplant', 'crop', 1 ] 
     },
     strawberry: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'strawberry', 'crop', 1 ] 
     },
     rasberrie: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'rasberrie', 'crop', 1 ] 
     },
     banana: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'banana', 'crop', 1 ] 
     },
     apple: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'apple', 'crop', 1 ] 
     },
     orange: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'orange', 'crop', 1 ] 
     },
     lemon: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'lemon', 'crop', 1 ] 
     },
     peach: {
         growth: 3,
-        growsOn: ['soil']
+        growsOn: ['soil'],
+        breaksWith: 'crop',
+        breaksTo: [ 'peach', 'crop', 1 ] 
     },
     rice: {
         growth: 3,
-        growsOn: ['water']
+        growsOn: ['water'],
+        breaksWith: 'crop',
+        breaksTo: [ 'rice', 'crop', 1 ]
     },
 }
 let objectList = []
@@ -138,20 +603,40 @@ for ( let i in objects ){
 }
 // object constuctor
 class object{
-    constructor(type){
-        this.type = type == undefined ? 'null' : type ;
+    constructor(name){
+        this.name = name == undefined ? 'null' : name ;
         this.age = 0
+        this.inv = []
+        this.growth = objects[this.name].growth
+        this.growsOn = objects[this.name].growsOn
+        this.breaksTo = objects[this.name].breaksTo
+        this.breaksWith = objects[this.name].breaksWith
+        
         this.update = ( cell, hydration, sun, fertilizer, bugs)=>{
-            this.age += objects[this.type].growth * hydration * sun * fertilizer * bugs
-            if ( this.type != 'null' ){
-                if ( objects[this.type].growsOn.indexOf(cell) == -1 | this.age < 0 ){
-                    this.type = 'null'
-                    this.age = 0
+            this.age += this.growth * hydration * sun * fertilizer * bugs
+            if ( this.growsOn.indexOf(cell) == -1 | this.age < 0 ){
+                this.place('null')
+            }
+        }
+        this.place = (name)=>{
+            this.name = name
+            this.age = 0
+            this.inv = []
+            this.growth = objects[this.name].growth
+            this.growsOn = objects[this.name].growsOn
+            this.breaksTo = objects[this.name].breaksTo
+            this.breaksWith = objects[this.name].breaksWith
+
+            this.update = ( cell, hydration, sun, fertilizer, bugs)=>{
+                this.age += this.growth * hydration * sun * fertilizer * bugs
+                if ( this.growsOn.indexOf(cell) == -1 | this.age < 0 ){
+                    this.place('null')
                 }
             }
         }
     }
 }
+
 // cells
 let cells = {
     water: {
@@ -177,6 +662,7 @@ let cellList = []
 for ( let i in cells ){
     cellList.push(i)
 }
+
 // cell constuctor
 class cell {
     constructor(type, thisObject) {
@@ -211,310 +697,7 @@ class cell {
         };
     }
 }
-// item class constructor
-let items = {
-    empty:{
 
-    },
-    null:{
-
-    },
-    // tools
-    dagger: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-
-    },
-    knife: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    sword: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    mattock: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    axe: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    pickaxe: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    hoe: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    sickle: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    scyth: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    wateringCan: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    blucket: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    shears: {
-        damage: 5,
-        speed: 5,
-        durability: 100,
-        oneUse: false
-    },
-    //seeds
-    potatoeSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    carrotSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    onionSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    pepperSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    tomatoSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    cucumberSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    eggplantSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    strawberrySeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    rasberrieSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    bananaSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    appleSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    orangeSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    lemonSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    peachSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    riceSeed: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    // 
-    potatoe: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    carrot: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    onion: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    pepper: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    tomato: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    cucumber: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    eggplant: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    strawberry: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    rasberrie: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    banana: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    apple: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    orange: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    lemon: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    peach: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-    rice: {
-        damage: 0,
-        speed: 5,
-        durability: 100,
-        oneUse: true,
-    },
-}
-class item {
-    constructor( name, type, count){
-        this.name = name
-        this.type = type
-        this.count = count
-        this.durability = items[this.name].durability
-        this.oneUse = items[this.name].oneUse
-        this.use = ( x, y, user)=>{
-            switch (this.type) {
-                case 'tool':
-                    switch (this.name){
-                        default:
-                            player.pickItem( new item(currentMap[y][x].object.type, 'crop', currentMap[y][x].object.age))
-                            currentMap[y][x].object = new object('null')
-                            break
-                    }
-                    break;
-                case 'seed':
-                    currentMap[y][x].object = new object( this.name.split(/[A-Z]/)[0] )
-                    break;
-                case 'crop':
-                
-                    break;
-                case 'cell':
-
-                    break;
-                case 'consumable':
-
-                    break;
-                case 'null':
-                    error( "this item can't be used" )
-                    break;        
-                default:
-                    error ('undefined item')
-                    break;
-            }
-        } 
-    }
-}
 // entity class
 class entity {
     constructor( name, x, y, w, h, texture) {
@@ -554,12 +737,20 @@ class entity {
             }
             return false
         }
-        this.pickItem = ( item)=>{
-            for ( let i = 0 ; i < this.inv.length ; i++ ){
-                if ( this.itemToIndex( item, i) == true){
-                    return true
+        this.pickItem = ( item )=>{
+            for ( let i = 0 ; i < player.inv.length ; i++ ){
+                if ( item.name != player.inv[i].name & player.inv[i].name != 'empty' ){
+                    continue
                 }
-            } return false
+                if ( item.name == player.inv[i].name ){
+                    player.inv[i].count += item.count
+                    break
+                }
+                if ( player.inv[i].name == 'empty' ){
+                    player.inv[i] = item
+                    break
+                }
+            }
         }
         this.moveX = (direction)=>{
             if ( direction > 0){
@@ -629,7 +820,7 @@ function render(thisMap){
             width: ${res}px;
             height: ${res}px;
             ">
-            ${thisMap[y][x].object.type}<br>
+            ${thisMap[y][x].object.name}<br>
             ${thisMap[y][x].object.age}
             </div>`
         }
@@ -763,12 +954,12 @@ randomMap[1][1] = new cell( 'wood', new object())
 
 // starting the game
 let currentMap = farmMap
-update(currentMap)
-render(currentMap)
-update(currentMap)
-render(currentMap)
 givePlayer( new item('sickle', 'tool', 2) )
-givePlayer( new item('potatoeSeed', 'seed', 5) )
-givePlayer( new item('tomatoSeed', 'seed', 5) )
-givePlayer( new item('riceSeed', 'seed', 5) )
+givePlayer( new item('potatoeSeed', 'seed', 20) )
+givePlayer( new item('tomatoSeed', 'seed', 20) )
+givePlayer( new item('riceSeed', 'seed', 20) )
+update(currentMap)
+render(currentMap)
+update(currentMap)
+render(currentMap)
 loop()
