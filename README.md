@@ -1,6 +1,10 @@
 # farmin:
  a work in progress farming rpg game in javascript and html
  
+# preview:
+
+https://user-images.githubusercontent.com/88392191/166959911-95929ba5-d624-4cc5-9865-67c2ebc973e3.mp4
+ 
 # the plan:
 <h3> gameplay loop: </h3>
 
