@@ -7,9 +7,7 @@ body{
     font-weight: bold;
     margin: 0px;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    user-select: none;
 }
 canvas{
     position: absolute;
@@ -17,7 +15,10 @@ canvas{
     image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+}
+#container{
+    margin-bottom: 80px;
 }
 .entityImg{
     background-color: rgb(26, 255, 83);
@@ -26,9 +27,6 @@ canvas{
 .row{
     display: flex;
     flex-direction: row;
-}
-#container{
-    margin-bottom: 50px;
 }
 .row div{
     font-family: monospace;
@@ -58,7 +56,6 @@ canvas{
 }
 .stone{
     background-color: rgb(78, 77, 77);
-    background: url(./textures/undefined.png);
 }
 .wood{
     background-color: rgb(150, 94, 59);
@@ -66,7 +63,6 @@ canvas{
 }
 .sand{
     background-color: rgb(188, 154, 68);
-    background: url(./textures/sand.png);
 }
 #hotbar{
     position: fixed;
@@ -105,9 +101,6 @@ canvas{
     #hotbar {
         height: 60px;
         flex-wrap: wrap;
-    }
-    #container, canvas{
-        margin-bottom: 80px;
     }
     #hotbar div {
         height: calc( 50% - 5px);
