@@ -28,42 +28,45 @@ canvas{
     flex-direction: row;
 }
 #container{
-    border: solid white 1px;
     margin-bottom: 50px;
 }
 .row div{
-    font-family: sans-serif;
-    font-size: 13px;
+    font-family: monospace;
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-crisp-edges;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     overflow: hidden;
+    background-size: 100%;
 }
 .grass{
     background-color: #242;
+    background: url(./textures/grass.png);
 }
 .water{
     background-color: #236;
+    background: url(./textures/water.png);
 }
 .soil{
     background-color: rgb(49, 30, 11);
-
+    background: url(./textures/soil0.png);
 }
 .stone{
     background-color: rgb(78, 77, 77);
+    background: url(./textures/undefined.png);
 }
 .wood{
     background-color: rgb(150, 94, 59);
+    background: url(./textures/wood.png);
 }
 .sand{
     background-color: rgb(188, 154, 68);
+    background: url(./textures/sand.png);
 }
 #hotbar{
     position: fixed;
@@ -110,4 +113,8 @@ canvas{
         height: calc( 50% - 5px);
         width: calc(100% / 5 - 10px);
     }
+}
+.object{
+    width: 80%;
+    height: 80%;
 }

@@ -40,8 +40,8 @@ let container = $('container');
 let width = container.clientHeight;
 let height = container.clientHeight;
 const playerSpeed = 5
-let res = 50
-const stepsToUpdate = 20;
+let res = 80
+const stepsToUpdate = 30;
 const waterSpread = 2.5
 
 // canvas setup
@@ -68,10 +68,15 @@ window.addEventListener( 'mouseup', ()=>{
 
 // item class constructor
 let items = {
-    empty:{},
-    null:{},
+    empty:{
+        displayName: 'empty',
+    },
+    null:{
+        displayName: 'empty',
+    },
     // tools
     dagger: {
+        displayName: 'dagger',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -81,6 +86,7 @@ let items = {
         oneUse: false,
     },
     knife: {
+        displayName: 'knife',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -90,6 +96,7 @@ let items = {
         oneUse: false,
     },
     sword: {
+        displayName: 'sword',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -99,6 +106,7 @@ let items = {
         oneUse: false,
     },
     mattock: {
+        displayName: 'mattock',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -108,6 +116,7 @@ let items = {
         oneUse: false,
     },
     axe: {
+        displayName: 'axe',
         type: 'tool',
         places: 'null',
         breaks: [],        
@@ -117,6 +126,7 @@ let items = {
         oneUse: false,
     },
     pickaxe: {
+        displayName: 'pickaxe',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -126,6 +136,7 @@ let items = {
         oneUse: false,
     },
     hoe: {
+        displayName: 'hoe',
         type: 'tool',
         places: 'null',
         breaks: [],        
@@ -135,6 +146,7 @@ let items = {
         oneUse: false,
     },
     sickle: {
+        displayName: 'sickle',
         type: 'tool',
         places: 'null',
         breaks: ['crop'],
@@ -144,6 +156,7 @@ let items = {
         oneUse: false,
     },
     scyth: {
+        displayName: 'scyth',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -153,6 +166,7 @@ let items = {
         oneUse: false,
     },
     wateringCan: {
+        displayName: 'wateringCan',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -162,6 +176,7 @@ let items = {
         oneUse: false,
     },
     blucket: {
+        displayName: 'blucket',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -171,6 +186,7 @@ let items = {
         oneUse: false,
     },
     shears: {
+        displayName: 'shears',
         type: 'tool',
         places: 'null',
         breaks: [],
@@ -181,6 +197,7 @@ let items = {
     },
     //seeds
     potatoeSeed: {
+        displayName: 'potatoe seed',
         type: 'seed',
         places: 'potatoe',
         breaks: [],
@@ -190,6 +207,7 @@ let items = {
         oneUse: true,
     },
     carrotSeed: {
+        displayName: 'carrot seed',
         type: 'seed',
         places: 'carrot',
         breaks: [],
@@ -199,6 +217,7 @@ let items = {
         oneUse: true,
     },
     onionSeed: {
+        displayName: 'onion seed',
         type: 'seed',
         places: 'onion',
         breaks: [],
@@ -208,6 +227,7 @@ let items = {
         oneUse: true,
     },
     pepperSeed: {
+        displayName: 'pepper seed',
         type: 'seed',
         places: 'pepper',
         breaks: [],
@@ -217,6 +237,7 @@ let items = {
         oneUse: true,
     },
     tomatoSeed: {
+        displayName: 'tomato seed',
         type: 'seed',
         places: 'tomato',
         breaks: [],
@@ -226,6 +247,7 @@ let items = {
         oneUse: true,
     },
     cucumberSeed: {
+        displayName: 'cucumber seed',
         type: 'seed',
         places: 'cucumber',
         breaks: [],
@@ -235,6 +257,7 @@ let items = {
         oneUse: true,
     },
     eggplantSeed: {
+        displayName: 'eggplant seed',
         type: 'seed',
         places: 'eggplant',
         breaks: [],
@@ -244,6 +267,7 @@ let items = {
         oneUse: true,
     },
     strawberrySeed: {
+        displayName: 'strawberry seed',
         type: 'seed',
         places: 'strawberry',
         breaks: [],
@@ -253,6 +277,7 @@ let items = {
         oneUse: true,
     },
     rasberrieSeed: {
+        displayName: 'rasberrie seed',
         type: 'seed',
         places: 'rasberrie',
         breaks: [],
@@ -262,6 +287,7 @@ let items = {
         oneUse: true,
     },
     bananaSeed: {
+        displayName: 'banana seed',
         type: 'seed',
         places: 'banana',
         breaks: [],
@@ -271,6 +297,7 @@ let items = {
         oneUse: true,
     },
     appleSeed: {
+        displayName: 'apple seed',
         type: 'seed',
         places: 'apple',
         breaks: [],
@@ -280,6 +307,7 @@ let items = {
         oneUse: true,
     },
     orangeSeed: {
+        displayName: 'orange seed',
         type: 'seed',
         places: 'orange',
         breaks: [],
@@ -289,6 +317,7 @@ let items = {
         oneUse: true,
     },
     lemonSeed: {
+        displayName: 'lemon seed',
         type: 'seed',
         places: 'lemon',
         breaks: [],
@@ -298,6 +327,7 @@ let items = {
         oneUse: true,
     },
     peachSeed: {
+        displayName: 'peach seed',
         type: 'seed',
         places: 'peach',
         breaks: [],
@@ -307,6 +337,7 @@ let items = {
         oneUse: true,
     },
     riceSeed: {
+        displayName: 'rice seed',
         type: 'seed',
         places: 'rice',
         breaks: [],
@@ -315,8 +346,9 @@ let items = {
         durability: 100,
         oneUse: true,
     },
-    // 
+    // crops
     potatoe: {
+        displayName: 'potatoe',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -326,6 +358,7 @@ let items = {
         oneUse: true,
     },
     carrot: {
+        displayName: 'carrot',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -335,6 +368,7 @@ let items = {
         oneUse: true,
     },
     onion: {
+        displayName: 'onion',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -344,6 +378,7 @@ let items = {
         oneUse: true,
     },
     pepper: {
+        displayName: 'pepper',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -353,6 +388,7 @@ let items = {
         oneUse: true,
     },
     tomato: {
+        displayName: 'tomato',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -362,6 +398,7 @@ let items = {
         oneUse: true,
     },
     cucumber: {
+        displayName: 'cucumber',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -371,6 +408,7 @@ let items = {
         oneUse: true,
     },
     eggplant: {
+        displayName: 'eggplant',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -380,6 +418,7 @@ let items = {
         oneUse: true,
     },
     strawberry: {
+        displayName: 'strawberry',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -389,6 +428,7 @@ let items = {
         oneUse: true,
     },
     rasberrie: {
+        displayName: 'rasberrie',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -398,6 +438,7 @@ let items = {
         oneUse: true,
     },
     banana: {
+        displayName: 'banana',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -407,6 +448,7 @@ let items = {
         oneUse: true,
     },
     apple: {
+        displayName: 'apple',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -416,6 +458,7 @@ let items = {
         oneUse: true,
     },
     orange: {
+        displayName: 'orange',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -425,6 +468,7 @@ let items = {
         oneUse: true,
     },
     lemon: {
+        displayName: 'lemon',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -434,6 +478,7 @@ let items = {
         oneUse: true,
     },
     peach: {
+        displayName: 'peach',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -443,6 +488,7 @@ let items = {
         oneUse: true,
     },
     rice: {
+        displayName: 'rice',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -452,38 +498,52 @@ let items = {
         oneUse: true,
     },
 }
+let itemList = []
+for ( let i in items ){
+    itemList.push(i)
+}
 class item {
     constructor( name, type, count){
         this.name = name
+        this.displayName = items[this.name].displayName
         this.type = type
         this.count = count
+        this.places = items[this.name].places
         this.damage = items[this.name].damage
         this.speed = items[this.name].speed
         this.durability = items[this.name].durability
         this.breaks = items[this.name].breaks
         this.oneUse = items[this.name].oneUse
-        this.use = ( x, y )=>{
+        this.use = ( x, y, user )=>{
             switch (this.type) {
                 case 'tool':
                     if ( this.breaks.indexOf( currentMap[y][x].object.breaksWith ) != -1 ) {
-                        player.pickItem( new item ( currentMap[y][x].object.breaksTo[0], currentMap[y][x].object.breaksTo[1], currentMap[y][x].object.breaksTo[2] ) )
-                        currentMap[y][x].object.place('null')
+                        if ( currentMap[y][x].object.age >= currentMap[y][x].object.maturity ) {
+                            player.pickItem( new item ( 
+                                currentMap[y][x].object.breaksTo[0],
+                                currentMap[y][x].object.breaksTo[1],
+                                currentMap[y][x].object.breaksTo[2] ) )
+                            currentMap[y][x].object.place('null')
+                        }
                     }
                     break;
                 case 'seed':
-                    currentMap[y][x].object.place( items[this.name].places )
+                    if ( objects[this.places].growsOn.indexOf(currentMap[y][x].type) != -1 ){
+                        if ( currentMap[y][x].object.name == 'null' ){
+                            currentMap[y][x].object.place( this.places )
+                            player.inv[player.inv.indexOf(this)].count--
+                        }
+                    }
                     break;
                 case 'crop':
-                
+                    
                     break;
                 case 'cell':
-
+                    
                     break;
                 case 'consumable':
 
-                    break;
-                case 'null':
-                    break;        
+                    break;      
                 default:
                     error ('undefined item')
                     break;
@@ -496,99 +556,115 @@ class item {
 let objects = {
     null:{
         growth: 0,
+        maturity: 0,
         growsOn: ['soil', 'water', 'grass', 'sand', 'stone', 'wood'],
         breaksWith: 'none',
         breaksTo: [ 'empty', 'null', 0  ] 
     },
     empty:{
         growth: 0,
+        maturity: 0,
         growsOn: ['soil', 'water', 'grass', 'sand', 'stone', 'wood'],
         breaksWith: 'none',
         breaksTo: [ 'empty', 'null', 0  ] 
     },
     potatoe: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'potatoe', 'crop', 1 ] 
+        breaksTo: [ 'potatoe', 'crop', 1 ],
     },
     carrot: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'carrot', 'crop', 1 ] 
+        breaksTo: [ 'carrot', 'crop', 1 ],
     },
     onion: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'onion', 'crop', 1 ] 
+        breaksTo: [ 'onion', 'crop', 1 ],
     },
     pepper: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'pepper', 'crop', 1 ] 
+        breaksTo: [ 'pepper', 'crop', 1 ],
     },
     tomato: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'tomato', 'crop', 1 ] 
+        breaksTo: [ 'tomato', 'crop', 1 ],
     },
     cucumber: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'cucumber', 'crop', 1 ] 
+        breaksTo: [ 'cucumber', 'crop', 1 ],
     },
     eggplant: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'eggplant', 'crop', 1 ] 
+        breaksTo: [ 'eggplant', 'crop', 1 ],
     },
     strawberry: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'strawberry', 'crop', 1 ] 
+        breaksTo: [ 'strawberry', 'crop', 1 ],
     },
     rasberrie: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'rasberrie', 'crop', 1 ] 
+        breaksTo: [ 'rasberrie', 'crop', 1 ],
     },
     banana: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'banana', 'crop', 1 ] 
+        breaksTo: [ 'banana', 'crop', 1 ],
     },
     apple: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'apple', 'crop', 1 ] 
+        breaksTo: [ 'apple', 'crop', 1 ],
     },
     orange: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'orange', 'crop', 1 ] 
+        breaksTo: [ 'orange', 'crop', 1 ],
     },
     lemon: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'lemon', 'crop', 1 ] 
+        breaksTo: [ 'lemon', 'crop', 1 ],
     },
     peach: {
         growth: 3,
+        maturity: 4,
         growsOn: ['soil'],
         breaksWith: 'crop',
-        breaksTo: [ 'peach', 'crop', 1 ] 
+        breaksTo: [ 'peach', 'crop', 1 ],
     },
     rice: {
         growth: 3,
@@ -609,26 +685,36 @@ class object{
         this.inv = []
         this.growth = objects[this.name].growth
         this.growsOn = objects[this.name].growsOn
+        this.maturity = objects[this.name].maturity
         this.breaksTo = objects[this.name].breaksTo
         this.breaksWith = objects[this.name].breaksWith
+        this.texture = `${this.name}-object-${this.age}.png`
         
         this.update = ( cell, hydration, sun, fertilizer, bugs)=>{
-            this.age += this.growth * hydration * sun * fertilizer * bugs
+            if ( this.age < this.maturity ){
+                this.age += 1
+            }
+            this.texture = `${this.name}-object-${this.age}.png`
             if ( this.growsOn.indexOf(cell) == -1 | this.age < 0 ){
                 this.place('null')
             }
         }
         this.place = (name)=>{
-            this.name = name
+            this.name = name == undefined ? 'null' : name ;
             this.age = 0
             this.inv = []
             this.growth = objects[this.name].growth
             this.growsOn = objects[this.name].growsOn
+            this.maturity = objects[this.name].maturity
             this.breaksTo = objects[this.name].breaksTo
             this.breaksWith = objects[this.name].breaksWith
+            this.texture = `${this.name}-object-${this.age}.png`
 
             this.update = ( cell, hydration, sun, fertilizer, bugs)=>{
-                this.age += this.growth * hydration * sun * fertilizer * bugs
+                if ( this.age < this.maturity ){
+                    this.age += 1
+                }
+                this.texture = `${this.name}-object-${this.age}.png`
                 if ( this.growsOn.indexOf(cell) == -1 | this.age < 0 ){
                     this.place('null')
                 }
@@ -815,14 +901,8 @@ function render(thisMap){
         container.innerHTML += `<div class="row" id="row${y}">
         </div>`
         for ( let x = 0 ; x < thisMap[y].length ; x++ ){
-            $(`row${y}`).innerHTML += `
-            <div class="${thisMap[y][x].type}" id="floor${y}-${x}" style="
-            width: ${res}px;
-            height: ${res}px;
-            ">
-            ${thisMap[y][x].object.name}<br>
-            ${thisMap[y][x].object.age}
-            </div>`
+            $(`row${y}`).innerHTML += `<div class="${thisMap[y][x].type }" id="cell ${y}-${x}" style="width: ${res}px ; height: ${res}px;"></div>`
+            $(`cell ${y}-${x}`).innerHTML = `<img class="object" src="./textures/${thisMap[y][x].object.texture}" />`
         }
     }
     // hotbar rendering
@@ -836,11 +916,11 @@ function render(thisMap){
         }
         if ( player.selected == i ){
             $('hotbar').innerHTML +=`
-                <div id="hotbar${i}" class="selected" > ${player.inv[i].name + ' ' + player.inv[i].count}</div>
+                <div id="hotbar${i}" class="selected" > ${player.inv[i].displayName + ' ' + player.inv[i].count}</div>
             `
         } else {
             $('hotbar').innerHTML +=`
-                <div id="hotbar${i}">${player.inv[i].name + ' ' + player.inv[i].count}</div>
+                <div id="hotbar${i}">${player.inv[i].displayName + ' ' + player.inv[i].count}</div>
             `
         }
     }
@@ -877,53 +957,41 @@ window.addEventListener( 'keydown', (key)=>{
     if( key.key == 'w' ){
         player.moveY(-1)
     }
-})
-window.addEventListener( 'keydown', (key)=>{
     if( key.key == 'a' ){
         player.moveX(-1)
     }
-})
-window.addEventListener( 'keydown', (key)=>{
     if( key.key == 's' ){
         player.moveY(1)
     }
-})
-window.addEventListener( 'keydown', (key)=>{
     if( key.key == 'd' ){
         player.moveX(1)
     }
 })
-window.addEventListener( 'keydown', (key)=>{
-    if( key.key == 'ArrowUp' ){
-        player.inv[player.selected].use( player.mapX , player.mapY-1, player )
-        if ( player.inv[player.selected].oneUse == true ) player.inv[player.selected].count--
-        else player.inv[player.selected].durability--
-    }
-})
-window.addEventListener( 'keydown', (key)=>{
-    if( key.key == 'ArrowLeft' ){
-        player.inv[player.selected].use( player.mapX-1 , player.mapY, player )
-        if ( player.inv[player.selected].oneUse == true ) player.inv[player.selected].count--
-        else player.inv[player.selected].durability--
-    }
-})
-window.addEventListener( 'keydown', (key)=>{
+
+window.addEventListener( 'keydown', (key) => {
     if( key.key == 'ArrowDown' ){
         player.inv[player.selected].use( player.mapX , player.mapY+1, player )
-        if ( player.inv[player.selected].oneUse == true ) player.inv[player.selected].count--
-        else player.inv[player.selected].durability--
     }
-})
-window.addEventListener( 'keydown', (key)=>{
     if( key.key == 'ArrowRight' ){
         player.inv[player.selected].use( player.mapX +1, player.mapY, player )
-        if ( player.inv[player.selected].oneUse == true ) player.inv[player.selected].count--
-        else player.inv[player.selected].durability--
+    }
+    if( key.key == 'ArrowLeft' ){
+        player.inv[player.selected].use( player.mapX-1 , player.mapY, player )
+    }
+    if( key.key == 'ArrowUp' ){
+        player.inv[player.selected].use( player.mapX , player.mapY-1, player )
+    }
+    if ( key.key / 1 + 1 > 0 & key.key != ' ' ) {
+        if ( key.key == 0){
+            player.selected = 9
+        } else {
+            player.selected = key.key - 1
+        }
     }
 })
 
 // making the player
-let player = new entity( 'player', 50, 50, 0.7, 0.7)
+let player = new entity( 'player', res*1.5, res*1.5, 0.7, 0.7)
 player.inv = new Array(10).fill( new item('empty', 'null', 0))
 
 // making the farm map
@@ -931,21 +999,23 @@ let farmMap = []
 for ( let y = 0 ; y < 6 ; y++ ){
     farmMap.push([])
     for ( let x = 0 ; x < 6 ; x++ ){
-        if ( x == 0 | x == 3){
+        if ( x == 0 | x == 4){
             farmMap[y].push( new cell( 'water', new object('null')) )
         }
-        else {
+        else if ( y != 2) {
+            farmMap[y].push( new cell( 'grass', new object('null')) )
+        } else {
             farmMap[y].push( new cell( 'soil', new object('null')) )
         }
     }
 }
-farmMap[3][3] = new cell('wood')
+farmMap[2][4] = new cell('wood')
 
 // making the random map
 let randomMap = []
-for ( let y = 0 ; y < 8 ; y++ ){
+for ( let y = 0 ; y < 10 ; y++ ){
     randomMap.push([])
-    for ( let x = 0 ; x < 6 ; x++ ){
+    for ( let x = 0 ; x < 10 ; x++ ){
         randomMap[y].push( new cell( cellList[rdm(cellList.length-1)], new object(objectList[rdm(objectList.length -1)])) )
         if (rdm(1)) randomMap[y][x] = new cell ( 'soil', new object(objectList[rdm(objectList.length -1)]))
     }
