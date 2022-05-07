@@ -1,10 +1,10 @@
 # farmin:
- a work in progress farming rpg game in javascript and html
+**abandoned** farming rpg game in javascript and html
  
 # preview:
 
-https://user-images.githubusercontent.com/88392191/166959911-95929ba5-d624-4cc5-9865-67c2ebc973e3.mp4
- 
+https://user-images.githubusercontent.com/88392191/167260731-63d95568-0f64-42af-ba9d-525e9f1db4d0.mp4
+
 # the plan:
 <h3> gameplay loop: </h3>
 
@@ -22,4 +22,4 @@ https://user-images.githubusercontent.com/88392191/166959911-95929ba5-d624-4cc5-
 
 ![FARMIN - plants](https://user-images.githubusercontent.com/88392191/166830615-b4eea72a-8afb-40db-8dd4-70ca30e13394.jpg)
 
-all this is not final and will change
+i might comeback to this project someday...
