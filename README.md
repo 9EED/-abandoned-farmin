@@ -8,7 +8,8 @@ https://user-images.githubusercontent.com/88392191/167260731-63d95568-0f64-42af-
 # the plan:
 <h3> gameplay loop: </h3>
 
-![FARMIN - game-play plan(1)](https://user-images.githubusercontent.com/88392191/166830489-8aa845f2-c0e1-4ceb-be2d-6dae7741f573.jpg)
+![FARMIN - game-play plan](https://user-images.githubusercontent.com/88392191/167260943-acaf2f41-7b4d-48ac-9dfe-591c0a8cd5a7.jpg)
+
 
 <h3> materials: </h3>
 
