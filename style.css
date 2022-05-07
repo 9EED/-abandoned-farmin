@@ -8,21 +8,16 @@ body{
     margin: 0px;
     height: 100vh;
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 canvas{
     position: absolute;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-crisp-edges;
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
     margin-bottom: 80px;
 }
 #container{
     margin-bottom: 80px;
-}
-.entityImg{
-    background-color: rgb(26, 255, 83);
-    display: none;
 }
 .row{
     display: flex;

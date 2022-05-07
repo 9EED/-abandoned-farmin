@@ -47,7 +47,6 @@ const waterSpread = 2.5
 // canvas setup
 let canvas = $('canvas')
 let c = canvas.getContext('2d')
-c.fillStyle = '#55b'
 
 // mouse tracker
 let mouse = {
@@ -807,7 +806,7 @@ class cell {
                     }
                 }
             }
-            this.object.update( this.type, this.hydration, this.sun, this.fertilizer, this.bugs);
+        this.object.update( this.type, this.hydration, this.sun, this.fertilizer, this.bugs);
         };
     }
 }
@@ -831,6 +830,7 @@ class entity {
         this.selected = 0;
         this.texture = texture;
         this.render = ()=>{
+            c.fillStyle = 'rgb(221, 191, 92)'
             c.fillRect( this.x, this.y, this.w*res, this.h*res)
             this.mapSX = Math.floor( ( this.x - this.speed ) / res )
             this.mapSY = Math.floor( ( this.y - this.speed ) / res )
