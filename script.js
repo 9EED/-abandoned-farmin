@@ -349,6 +349,7 @@ let items = {
     // crops
     potatoe: {
         displayName: 'potatoe',
+        seed: 'potatoeSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -359,6 +360,7 @@ let items = {
     },
     carrot: {
         displayName: 'carrot',
+        seed: 'carrotSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -369,6 +371,7 @@ let items = {
     },
     onion: {
         displayName: 'onion',
+        seed: 'onionSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -379,6 +382,7 @@ let items = {
     },
     pepper: {
         displayName: 'pepper',
+        seed: 'pepperSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -389,6 +393,7 @@ let items = {
     },
     tomato: {
         displayName: 'tomato',
+        seed: 'tomatoSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -399,6 +404,7 @@ let items = {
     },
     cucumber: {
         displayName: 'cucumber',
+        seed: 'cucumberSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -409,6 +415,7 @@ let items = {
     },
     eggplant: {
         displayName: 'eggplant',
+        seed: 'eggplantSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -419,6 +426,7 @@ let items = {
     },
     strawberry: {
         displayName: 'strawberry',
+        seed: 'strawberrySeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -429,6 +437,7 @@ let items = {
     },
     rasberrie: {
         displayName: 'rasberrie',
+        seed: 'rasberrieSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -439,6 +448,7 @@ let items = {
     },
     banana: {
         displayName: 'banana',
+        seed: 'bananaSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -449,6 +459,7 @@ let items = {
     },
     apple: {
         displayName: 'apple',
+        seed: 'appleSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -459,6 +470,7 @@ let items = {
     },
     orange: {
         displayName: 'orange',
+        seed: 'orangeSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -469,6 +481,7 @@ let items = {
     },
     lemon: {
         displayName: 'lemon',
+        seed: 'lemonSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -479,6 +492,7 @@ let items = {
     },
     peach: {
         displayName: 'peach',
+        seed: 'peachSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -489,6 +503,7 @@ let items = {
     },
     rice: {
         displayName: 'rice',
+        seed: 'riceSeed',
         type: 'crop',
         places: 'null',
         breaks: [],
@@ -508,6 +523,7 @@ class item {
         this.displayName = items[this.name].displayName
         this.type = type
         this.count = count
+        this.seed = items[this.name].seed
         this.places = items[this.name].places
         this.damage = items[this.name].damage
         this.speed = items[this.name].speed
@@ -543,7 +559,8 @@ class item {
                     }
                     break;
                 case 'crop':
-                    
+                    player.inv[player.inv.indexOf(this)].count--
+                    player.pickItem( new item( this.seed, 'seed', 4))
                     break;
                 case 'cell':
                     
@@ -1007,9 +1024,9 @@ player.inv = new Array(10).fill( new item('empty', 'null', 0, 1))
 
 // making the farm map
 let farmMap = []
-for ( let y = 0 ; y < 13 ; y++ ){
+for ( let y = 0 ; y < 7 ; y++ ){
     farmMap.push([])
-    for ( let x = 0 ; x < 13 ; x++ ){
+    for ( let x = 0 ; x < 7 ; x++ ){
         if ( x == 0 | x == 4){
             farmMap[y].push( new cell( 'water', new object('null')) )
         }
@@ -1025,9 +1042,9 @@ farmMap[2][4] = new cell('wood')
 
 // making the random map
 let randomMap = []
-for ( let y = 0 ; y < 10 ; y++ ){
+for ( let y = 0 ; y < 5 ; y++ ){
     randomMap.push([])
-    for ( let x = 0 ; x < 10 ; x++ ){
+    for ( let x = 0 ; x < 5 ; x++ ){
         randomMap[y].push( new cell(
             cellList[rdm(cellList.length-1)],
             new object(objectList[rdm(objectList.length -1)])) )
